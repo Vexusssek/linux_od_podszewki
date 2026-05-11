@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "1. Utwórz"
+echo "2. Usuń"
+echo "3. Kopiuj"
+echo "4. Przenieś"
+echo "5. Utwórz foldery"
+
+read choice
+
+case $choice in
+	1)
+	 read -p "Nazwa pliku: " name
+	 touch "$name"
+	 ;;
+	2)
+	 read -p "Nazwa pliku: " name
+	 rm -r "$name"
+	 ;;
+	3)
+	 read -p "Nazwa pliku numer 1: " nr1
+	 read -p "Nazwa pliku numer 2: " nr2
+	 cp -r "$nr1" "$nr2"
+	 ;;
+	4)
+	 read -p "Nazwa pliku numer 1: " nr1
+	 read -p "Nazwa pliku numer 2: " nr2
+	 mv "$nr1" "$nr2"
+	 ;;
+	5)
+	 read -p "Nazwa folderu/ścieżka: " sciezka
+	 mkdir -p "$sciezka"
+	 ;;
+esac
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case $1 in
+
+	create)
+	 touch "$2"
+	 ;;
+	delete)
+	 rm -r "$2"
+	 ;;
+	copy)
+	 cp -r "$2" "$3"
+	 ;;
+	move)
+	 mv "$2" "$3"
+	 ;;
+	mkdirs)
+	 mkdir -p "$2"
+	 ;;
+	*)
+	 echo "Użycie:"
+	 echo "$0 create/delete/copy/move/mkdirs ..."
+	 ;;
+esac
